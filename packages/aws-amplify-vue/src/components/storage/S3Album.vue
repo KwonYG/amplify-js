@@ -59,6 +59,9 @@ export default {
       this.pushImage(img);
     });
   },
+  beforeDestroy(){
+    this.$off('fileUpload');
+  },
   methods: {
     getImages() {
       if (!this.path) { 
