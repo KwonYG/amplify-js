@@ -76,6 +76,10 @@ export default {
     })
     .catch(e => this.setError(e))
   },
+  beforeDestroy(){
+    AmplifyEventBus.$off('localUser');
+    AmplifyEventBus.$off('authState')
+  },
   methods: {
     updateDisplayMap: state => {
       return {
